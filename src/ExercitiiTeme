@@ -1,0 +1,74 @@
+//numara cate strofe are
+for (String vers: poezie
+             ) {
+            
+           if (vers.isEmpty()) {
+               strofe++;
+           }
+           if (vers.startsWith("...")) {
+               strofe--;
+           }
+
+
+        }
+        
+//numara cate versuri are
+
+        for (String vers : poezie) {
+            if (!vers.isEmpty() && !vers.startsWith("..")) {
+                numarVers++;
+            }
+        }
+        
+//numara cuvinte despartite de spatii
+for (String vers : poezie) {
+            if (!vers.isEmpty() && !vers.startsWith("...")) {
+            StringTokenizer st = new StringTokenizer(vers);
+                while (st.hasMoreElements()) {
+                   st.nextElement();
+                    counter++;
+                }
+            }
+        }
+
+//numara cuvinte unice si neunice
+x
+
+//numara de cate ori apare un anumit cuvant
+        String x = "fost";
+        String y = "";
+
+        for (String vers : poezie) {
+            if (!vers.isEmpty() && !vers.startsWith("...")) {
+            StringTokenizer st = new StringTokenizer(vers);
+
+                while (st.hasMoreTokens()) {
+                    y = st.nextToken();
+                    if(y.equalsIgnoreCase(x)) {
+                        System.out.println("Merge");
+                        counter++;
+                    }
+
+                }
+
+            }
+        }
+        
+        
+//scrie versurile mai scurte de 4 cuvinte in alt fisier
+
+        for (String vers : poezie) {
+            if (!vers.isEmpty() && !vers.startsWith("...")) {
+            StringTokenizer st = new StringTokenizer(vers);
+
+                int wordCount = st.countTokens();
+                if (wordCount < 4) {
+                    fo.writeFile("testing.txt",vers);
+                    fo.writeFile("testing.txt", "\n");
+                    System.out.println("Am scris versul");
+                }
+
+            }
+        }
+        
+//afiseaza numarul de cuvinte din cel mai lung vers
